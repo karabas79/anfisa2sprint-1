@@ -12,7 +12,8 @@
       Конкурс мороженого
     </div>
     <div class="card-body">
-      <form>
+      <form method="post">
+        {% csrf_token %}
         <!-- Выводим поля формы с помощью специального тега. -->
         {% bootstrap_form form %}
         <!-- Добавляем кнопку отправки данных. -->
@@ -21,6 +22,6 @@
     </div>
   </div>
   {% if form.is_valid %}
-    <h2>Рецепт мороженого "{{ request.GET.title }}" принят на конкурс!</h2>
+    <h2>Рецепт мороженого "{{ request.POST.title }}" принят на конкурс!</h2>
   {% endif %}
 {% endblock %}
