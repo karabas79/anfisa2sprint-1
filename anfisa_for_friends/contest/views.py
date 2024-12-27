@@ -7,4 +7,3 @@ def proposal(request):
     form = ContestForm(request.POST or None)
     context = {'form': form}
     return render(request, 'contest/form.html', context=context)
-    
